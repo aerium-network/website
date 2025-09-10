@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aerium — Coming Soon</title>
+  <meta name="description" content="Aerium is a next-generation blockchain. We're launching soon.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="aerium.png" type="image/png">
+  <meta property="og:title" content="Aerium — Coming Soon">
+  <meta property="og:description" content="Aerium is a next-generation blockchain. We're launching soon.">
+  <meta property="og:image" content="aerium.png">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0a1832;
+      --brand:#3b82f6;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --card: rgba(255,255,255,.08);
+      --border: rgba(255,255,255,.15);
+      --shadow: 0 10px 40px rgba(0,0,0,.35);
+      --radius: 28px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg1:#f7fafc;
+        --bg2:#eef2ff;
+        --text:#0b1220;
+        --muted:#475569;
+        --card: rgba(255,255,255,.85);
+        --border: rgba(0,0,0,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, #0ea5e9 0%, transparent 50%),
+                  radial-gradient(1000px 600px at 90% 10%, #8b5cf6 0%, transparent 50%),
+                  radial-gradient(1200px 800px at 50% 120%, #22d3ee 0%, transparent 55%),
+                  linear-gradient(135deg,var(--bg1),var(--bg2));
+      background-attachment: fixed;
+      overflow-x: hidden;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .card{
+      width:min(1000px, 96vw);
+      border:1px solid var(--border);
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 56px);
+      text-align:center;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap: clamp(16px, 3vw, 28px);
+      min-height: min(72vh, 680px);
+    }
+    .brand img{
+      width: clamp(140px, 18vw, 220px);
+      height: auto;
+      object-fit:contain;
+      filter: drop-shadow(0 8px 28px rgba(59,130,246,.35));
+    }
+    h1{
+      margin:0;
+      font-weight:900;
+      letter-spacing:.3px;
+      line-height:1.05;
+      font-size: clamp(36px, 8vw, 88px);
+      background: linear-gradient(90deg, var(--text), #cbd5e1 40%, white 70%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .tagline{
+      margin:0;
+      color:var(--muted);
+      font-size: clamp(16px, 2.4vw, 22px);
+    }
+    .btn{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      padding: clamp(12px, 1.6vw, 16px) clamp(18px, 3vw, 28px);
+      border-radius:18px;
+      font-weight:700;
+      letter-spacing:.2px;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      background: linear-gradient(180deg, var(--brand), #2563eb);
+      color:white;
+      text-decoration:none;
+      display:inline-block;
+      font-size: clamp(14px, 2vw, 18px);
+    }
+    .btn:active{ transform: translateY(1px) scale(.99); }
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-top: clamp(16px, 2vw, 24px);
+    }
+    /* subtle floating sparkles */
+    .sparkle{ position:fixed; inset:0; pointer-events:none; overflow:hidden;}
+    .sparkle span{
+      position:absolute; width:6px; height:6px; border-radius:50%;
+      background:radial-gradient(circle,#fff,rgba(255,255,255,0));
+      opacity:.6; filter: blur(.5px);
+      animation: float 10s linear infinite;
+    }
+    @keyframes float{
+      from{ transform: translateY(110vh) translateX(0) scale(1)}
+      to{ transform: translateY(-10vh) translateX(20vw) scale(1.2)}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Aerium coming soon">
+    <div class="brand">
+      <img src="aerium.png" alt="Aerium logo" width="220" height="220" loading="eager">
+      <h1>Aerium Blockchain</h1>
+      <p class="tagline">Coming soon.</p>
+      <a class="btn" href="https://github.com/aerium-network" rel="noopener">GitHub</a>
+      <footer>&copy; <span id="year"></span> Aerium. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <!-- Floating sparkles -->
+  <div class="sparkle" aria-hidden="true">
+    <span style="left:10%; animation-duration:12s; animation-delay:-2s;"></span>
+    <span style="left:20%; animation-duration:9s; animation-delay:-6s;"></span>
+    <span style="left:35%; animation-duration:11s; animation-delay:-4s;"></span>
+    <span style="left:55%; animation-duration:8s; animation-delay:-7s;"></span>
+    <span style="left:70%; animation-duration:10s; animation-delay:-1s;"></span>
+    <span style="left:85%; animation-duration:13s; animation-delay:-5s;"></span>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
