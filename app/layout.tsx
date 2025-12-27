@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Rubik, Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 const rubik = Rubik({
   variable: "--font-rubik",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
 });
 
@@ -69,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.variable} antialiased`}>
+      <body className={`${rubik.variable} ${inter.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>
     </html>

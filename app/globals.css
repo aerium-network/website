@@ -3,12 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-blue: #3992fb;
+  --secondary-blue: #76c2fc;
+  --dark-blue: #00234a;
+  --text-primary: #232323;
+  --text-secondary: #383838;
+  --divider: #e9e9e9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-rubik);
+  --font-sans: 'Inter', sans-serif;
+  --font-rubik: 'Rubik', sans-serif;
+  --font-vazirmatn: 'Vazirmatn', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +28,28 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-rubik), Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(146.8deg, var(--secondary-blue) 17.719%, var(--primary-blue) 68.414%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(146.8deg, var(--secondary-blue) 17.719%, var(--primary-blue) 68.414%);
 }
